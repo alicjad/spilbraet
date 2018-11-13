@@ -11,6 +11,7 @@ nav{
     bottom: 0;
     width: 9.5vw;
     height: 100vh;
+    box-shadow: 0 0 20px black;
     background: white;
 }
 
