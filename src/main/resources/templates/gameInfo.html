@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" href="/menuStyle.css">
-    <title>Our games</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
 <nav class="menu">
@@ -15,17 +16,13 @@
         <li class="menu-item"><a href="/contact">Contact</a></li>
     </ol>
 </nav>
-<div id="content">
-    <h1>Game od the year 2018</h1>
-
-    <div th:each="game: ${games}">
-        <a th:href="'/gameInfo?id=' + ${game.id}">
-            <div>
-                <img th:src="${game.image}" width="75" height="75">
-                <h6 th:text="${game.title}"></h6>
-            </div>
-        </a>
-    </div>
+    <!--<p th:text="'Description: ' + ${game.description}" ></p>-->
+<div class="center">
+    <span class="card-title" th:text="${game.title}"></span>
+    <p th:text="'Description: ' + ${game.description}" ></p>
+    <p th:text="'Price: ' + ${game.price}" ></p>
 </div>
+
+
 </body>
 </html>
