@@ -20,7 +20,6 @@ nav{
 }
 
 div#content{
-    width: 100vw;
     margin-left: 9.5vw;
     overflow: hidden;
 }
@@ -128,6 +127,46 @@ nav>ol{
 
 .frame:hover{
     transform: scale(1.1);
+}
 
+.left{
+    width: 49%;
+    position: relative;
+    display: inline-block;
+}
+.left img{
+    width: 100%;
+}
+.right {
+    width: 49%;
+    position: relative;
+    display: inline-block;
+    top: -250px;
+}
+.card-title{
+    text-align: center;
+    font-family: monospace;
+    font-size: 36px;
+}
+.card-text{
+     font-family: monospace;
+     font-size: 24px;
+ }
+.card-price{
+    text-align: left;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.left-front{
+    width: 52%!important;
+    position: relative;
+    display: inline-block;
+}
+
+.right-front {
+    width: 34%!important;
+    position: relative;
+    display: inline-block;
 
 }

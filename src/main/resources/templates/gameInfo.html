@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/menuStyle.css">
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${game.title}"></title>
 </head>
 <body>
 <nav class="menu">
@@ -18,12 +15,17 @@
         <li class="menu-item"><a href="/contact">Contact</a></li>
     </ol>
 </nav>
-    <!--<p th:text="'Description: ' + ${game.description}" ></p>-->
-<div class="center">
-    <span class="card-title" th:text="${game.title}"></span>
-    <img th:src="${game.image}" width="70%">
-    <p th:text="'Description: ' + ${game.description}" ></p>
-    <p th:text="'Price: ' + ${game.price}" ></p>
+
+<div id="content">
+   <div class="left">
+       <img th:src="${game.image}" >
+   </div>
+    <div class="right">
+        <p class="card-title" th:text="${game.title}"></p>
+        <p class="card-text" th:text="'Description: ' + ${game.description}" ></p>
+        <p class="card-price" th:text="'Price: ' + ${game.price}" ></p>
+    </div>
+
 </div>
 
 
