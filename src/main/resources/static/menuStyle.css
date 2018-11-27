@@ -20,8 +20,22 @@ nav{
 }
 
 div#content{
-    width: 90vw;
+    width: 100vw;
     margin-left: 9.5vw;
+    overflow: hidden;
+}
+
+div#news{
+    margin-left: 50px;
+    width: 45vw;
+    float: left;
+}
+
+div#shownGames{
+    width: 45vw;
+    float: right;
+    margin-right: 20px;
+    position: center;
 }
 
 .logo{
