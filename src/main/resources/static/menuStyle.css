@@ -1,5 +1,5 @@
 body{
-    background: #ed9444;
+    background: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
 }
@@ -16,7 +16,7 @@ nav{
     width: 9.5vw;
     height: 100vh;
     box-shadow: 0 0 20px black;
-    background: white;
+    background: darkorange;
 }
 
 div#content{
