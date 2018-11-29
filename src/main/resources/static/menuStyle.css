@@ -74,20 +74,24 @@ nav>ol{
 }
 
 .menu-item:nth-child(1):after{
-    background: Crimson;
+    //background: Crimson;
+    background: ForestGreen;
 
 }
 
 .menu-item:nth-child(2):after{
-    background: Goldenrod;
+    //background: Goldenrod;
+    background: ForestGreen;
 }
 
 .menu-item:nth-child(3):after{
-    background: DodgerBlue;
+    //background: DodgerBlue;
+    background: ForestGreen;
 }
 
 .menu-item:nth-child(4):after{
-    background: BlueViolet;
+    //background: BlueViolet;
+    background: ForestGreen;
 }
 
 .menu-item:nth-child(5):after{
