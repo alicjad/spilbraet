@@ -16,7 +16,7 @@ nav{
     width: 9.5vw;
     height: 100vh;
     box-shadow: 0 0 20px black;
-    background: darkorange;
+    background: rgba(236, 124, 0, 0.96);
 }
 
 div#content{
