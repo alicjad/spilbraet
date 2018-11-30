@@ -18,11 +18,11 @@
 <div id="content">
     <p class="title">Games of the year 2018</p>
 
-    <div th:each="game: ${games}">
-            <a th:href="'/gameInfo?id=' + ${game.id}">
-                <div class="frame">
+    <div th:each="game: ${games}" class="frame">
+            <a th:href="'/gameInfo?id=' + ${game.id}" style="color:black" >
+                <div>
                     <img th:src="${game.image}" width="200" height="200">
-                    <p th:text="${game.title}" style="color:black";></p>
+                    <p th:text="${game.title}" ></p>
                 </div>
             </a>
     </div>
