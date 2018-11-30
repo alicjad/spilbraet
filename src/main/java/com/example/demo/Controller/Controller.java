@@ -2,14 +2,14 @@ package com.example.demo.Controller;
 
 import com.example.demo.Model.Game;
 import com.example.demo.Repositories.GamesRepository;
-import com.example.demo.Repositories.IGamesRepository;
+import com.example.demo.Repositories.IGameRepository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-    private IGamesRepository gamesRepository;
+    private IGameRepository gamesRepository;
 
     public Controller() {
         gamesRepository = new GamesRepository();

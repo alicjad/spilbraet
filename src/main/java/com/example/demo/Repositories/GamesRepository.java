@@ -9,8 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class GamesRepository implements IGamesRepository{
-    private Connection conn;
+public class GamesRepository implements IGameRepository {
     private PreparedStatement preparedStatement;
     private ResultSet result;
 
@@ -36,7 +35,7 @@ public class GamesRepository implements IGamesRepository{
                         result.getString("image"),
                         result.getFloat("price")
                 );
-            };
+            }
 
 
         }
