@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <title>News</title>
     <link rel="stylesheet" href="/menuStyle.css">
-    <title th:text="${game.title}"></title>
 </head>
 <body>
 <nav class="menu">
@@ -15,16 +15,13 @@
         <li class="menu-item"><a href="/contact">Contact</a></li>
     </ol>
 </nav>
-
 <div id="content">
-   <div class="left">
-       <img th:src="${game.image}" >
-   </div>
-    <div class="right">
-        <p class="card-title" th:text="${game.title}"></p>
-        <p class="card-text" th:text="'Description: ' + ${game.description}" ></p>
-        <p class="card-price" th:text="'Price: ' + ${game.price}" ></p>
+    <p> Our recent news</p>
+    <div th:each="news: ${news}">
+        <p th:text="${news.title}"></p>
+        <p th:text="${news.description}"></p>
     </div>
+
 
 </div>
 

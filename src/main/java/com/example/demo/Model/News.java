@@ -3,14 +3,24 @@ package com.example.demo.Model;
 public class News {
 
     private int news_id;
+    private String title;
     private String description;
 
     public News() {
     }
 
-    public News(int news_id, String description) {
+    public News(int news_id,String title, String description) {
         this.news_id = news_id;
+        this.title=title;
         this.description = description;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getNews_id() {

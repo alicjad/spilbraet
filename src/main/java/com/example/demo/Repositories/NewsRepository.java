@@ -21,13 +21,14 @@ public class NewsRepository implements INewsRepository {
         Connection conn;
 
         conn = DbConnection.getConnection();
-        preparedStatement = conn.prepareStatement("SELECT * FROM news where id=?");
+        preparedStatement = conn.prepareStatement("SELECT * FROM news where news_id=?");
         preparedStatement.setInt(1, id);
         result = preparedStatement.executeQuery();
 
         if (result.next()) {
             return new News(
-                    result.getInt("id"),
+                    result.getInt("news_id"),
+                    result.getString("title"),
                     result.getString("description")
             );
         }
@@ -55,8 +56,9 @@ public class NewsRepository implements INewsRepository {
 
         while(result.next()){
 
-            news.add(new News(result.getInt("id"),
-                    result.getString("title")));
+            news.add(new News(result.getInt("news_id"),
+                    result.getString("title"),
+                    result.getString("description")));
         }
         return news;
     }
