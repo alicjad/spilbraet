@@ -33,7 +33,8 @@ public class GamesRepository implements IGameRepository {
                         result.getString("title"),
                         result.getString("description"),
                         result.getString("image"),
-                        result.getFloat("price")
+                        result.getFloat("price"),
+                        result.getString("link")
                 );
             }
 
@@ -73,7 +74,8 @@ public class GamesRepository implements IGameRepository {
                         result.getString("title"),
                         result.getString("description"),
                         result.getString("image"),
-                        result.getFloat("price")));
+                        result.getFloat("price"),
+                        result.getString("link")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

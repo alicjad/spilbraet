@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/menuStyle.css">
 </head>
 <body>
+
 <nav class="menu">
     <img class="logo" src="http://static1.squarespace.com/static/546b4e9de4b0b367ee9ed3e4/t/5ac737776d2a7394c9527e5e/1522763198118/?format=300w">
     <ol>
@@ -15,14 +16,16 @@
         <li class="menu-item"><a href="/contact">Contact</a></li>
     </ol>
 </nav>
+
 <div id="content">
     <p> Our recent news</p>
+
     <div th:each="news: ${news}">
         <p th:text="${news.title}"></p>
         <p th:text="${news.description}"></p>
+        <img th:if="${news.image}!=null" th:src="${news.image}" style=" width:300px;height:150px">
+        <a th:href="@{'updateNews?id='+ ${news.newsId}}" class="button">Update</a>
     </div>
-
-
 </div>
 
 

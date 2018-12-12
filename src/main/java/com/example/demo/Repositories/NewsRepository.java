@@ -12,6 +12,7 @@ public class NewsRepository implements INewsRepository {
 
     private PreparedStatement preparedStatement;
     private ResultSet result;
+    private int size;
 
     public NewsRepository() {
     }
@@ -21,23 +22,18 @@ public class NewsRepository implements INewsRepository {
         Connection conn;
 
         conn = DbConnection.getConnection();
-        preparedStatement = conn.prepareStatement("SELECT * FROM news where news_id=?");
+        preparedStatement = conn.prepareStatement("SELECT * FROM news where newsId=?");
         preparedStatement.setInt(1, id);
         result = preparedStatement.executeQuery();
+        result.next();
 
-        if (result.next()) {
-            return new News(
-                    result.getInt("news_id"),
+
+        return new News(
+                    result.getInt("newsId"),
                     result.getString("title"),
-                    result.getString("description")
+                    result.getString("description"),
+                    result.getString("image")
             );
-        }
-        return null;
-    }
-
-    @Override
-    public void update(News news) {
-
     }
 
     @Override
@@ -51,15 +47,39 @@ public class NewsRepository implements INewsRepository {
         ArrayList<News> news = new ArrayList<>();
         Connection conn = DbConnection.getConnection();
 
+
         preparedStatement = conn.prepareStatement("SELECT * FROM news");
         result = preparedStatement.executeQuery();
 
         while(result.next()){
 
-            news.add(new News(result.getInt("news_id"),
+            news.add(new News(result.getInt("newsId"),
                     result.getString("title"),
-                    result.getString("description")));
+                    result.getString("description"),
+                    result.getString("image")));
+
+            size++;
+
+
         }
         return news;
     }
+
+    @Override
+    public void update(News news) {
+        Connection conn = DbConnection.getConnection();
+
+        try {
+            preparedStatement = conn.prepareStatement("UPDATE news SET title= ? , description = ? , image= ? WHERE newsId= ? ");
+            preparedStatement.setString(1,news.getTitle());
+            preparedStatement.setString(2,news.getDescription());
+            preparedStatement.setString(3,news.getImage());
+            preparedStatement.execute();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
 }

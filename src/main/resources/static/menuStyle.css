@@ -1,3 +1,4 @@
+/* General settings for all pages */
 body{
     background: white;
     font-family: 'Montserrat', sans-serif;
@@ -6,6 +7,13 @@ body{
 
 a{
     text-decoration: none;
+}
+
+/*NAV BAR */
+.logo{
+    margin-top: 10vh;
+    width: 8vw;
+    margin-left: 0.75vw;
 }
 
 nav{
@@ -17,31 +25,6 @@ nav{
     height: 100vh;
     box-shadow: 10px 0 10px 0 rgba(0,0,0,0.3);
     background: #EE7325;
-}
-
-div#content{
-    margin-left: 9.5vw;
-    overflow: hidden;
-}
-
-div#news{
-    margin-left: 50px;
-    width: 45vw;
-    float: left;
-}
-
-div#shownGames{
-    width: 45vw;
-    float: right;
-    margin-right: 20px;
-    position: center;
-}
-
-.logo{
-    margin-top: 10vh;
-    width: 8vw;
-    margin-left: 0.75vw;
-
 }
 
 nav>ol{
@@ -71,15 +54,12 @@ nav>ol{
     z-index: -1;
     box-shadow: 0 0 0 0 #1e1e1e;
     transition: .2s all linear;
-}
-
-.menu-item:after{
     background: #067B37;
 
 }
 
 .menu-item:hover:after{
-    width: 100%;
+    width:100%;
 }
 
 .menu-item:hover{
@@ -88,11 +68,25 @@ nav>ol{
     transform: scale(1.1);
 }
 
-
 .menu-item>a{
     color: black;
     text-decoration: none;
     font-family: 'Montserrat ExtraBold' , sans-serif !important ;
+}
+
+
+/* fixing content next to nav bar */
+div#content{
+    margin-left: 10vw;
+    overflow: hidden;
+}
+
+
+div#shownGames{
+    width: 45vw;
+    float: right;
+    margin-right: 20px;
+    position: center;
 }
 
 .title{
@@ -127,7 +121,6 @@ nav>ol{
     width: 49%;
     position: relative;
     display: inline-block;
-    top: -250px;
 }
 .card-title{
     text-align: center;
@@ -135,7 +128,6 @@ nav>ol{
     font-size: 36px;
 }
 .card-text{
-     font-family: monospace;
      font-size: 24px;
  }
 .card-price{

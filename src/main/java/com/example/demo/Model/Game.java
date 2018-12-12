@@ -8,19 +8,21 @@ public class Game {
     private String bulletpoints;
     private String image;
     private float price;
+    private String link;
 
     public Game() {
     }
 
-    public Game(int id, String title, String description, String image, float price) {
+    public Game(int id, String title, String description, String image, float price, String link) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.image = image;
         this.price = price;
+        this.link=link;
     }
 
-    public Game(int id, String title, String description, String quote, String bulletpoints, String image, float price) {
+    public Game(int id, String title, String description, String quote, String bulletpoints, String image, float price, String link) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -28,6 +30,7 @@ public class Game {
         this.bulletpoints = bulletpoints;
         this.image = image;
         this.price = price;
+        this.link=link;
     }
 
     public int getId() {
@@ -84,5 +87,13 @@ public class Game {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

@@ -1,40 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="/menuStyle.css">
     <title>Spilbraet DK</title>
+    <link rel="stylesheet" href="/menuStyle.css">
 </head>
 <body>
+
 <nav class="menu">
     <img class="logo" src="http://static1.squarespace.com/static/546b4e9de4b0b367ee9ed3e4/t/5ac737776d2a7394c9527e5e/1522763198118/?format=300w">
     <ol>
         <li class="menu-item"><a href="/">Home</a></li>
         <li class="menu-item"><a href="/about">About</a></li>
         <li class="menu-item"><a href="/games">Currently promoted games</a></li>
-        <li class="menu-item"><a href="">News</a></li>
+        <li class="menu-item"><a href="/news">News</a></li>
         <li class="menu-item"><a href="/contact">Contact</a></li>
     </ol>
 </nav>
+
 <div id="content">
     <h1> 🤩 Giv dig selv en pause! Spille brætspil! 🤩</h1>
-    <div id="news" class="left-front">
-        <h2 class="subtitle">Nyhedsstrøm</h2>
-        <h4>👑👑👑KONKURRENCE👑👑👑</h4>
-        <p>I denne uge sætter vi et eksemplar af det prisvindende brætspil Kingdomino på højkant.<br>
-            Kingdomino er en nyfortolkning af det klassiske domino, hvor spillerne konkurrerer om at bygge små kongeriger,<br>
-            ved at placere dominolignende landskabsbrikker🏰 <br>
-            For at deltage skal du blot like dette opslag og skrive en kommentar, <br>
-            gerne hvilke brætspilselskende venner du vil spille med👀<br>
-            Vi trækker en vinder på søndag d. 2/12 kl 12.00👍<br>
-            Husk desuden at like vores side, for at holde dig opdateret med kommende nyheder, tilbud, konkurrencer osv.<br>
-            <br>
-            Konkurrencen er hverken sponsoreret, administreret af eller associeret med Facebook.
-            <a href="https://www.facebook.com/Spilbraet.dk/" target="_blank">-->click!</a></p>
-        <h4>Black Friday!</h4>
-        <p>Køb 3 - betal for 2 i hele butikken på Fisketorvet under Black Friday. <br> Vi har åbent fra 08.00 - 24.00🤩🎲🤑💥</p>
-        <img src="https://scontent.fzgh1-1.fna.fbcdn.net/v/t1.0-9/46517216_2169929499894994_6977117627244085248_o.jpg?_nc_cat=101&_nc_ht=scontent.fzgh1-1.fna&oh=94ca53a369698990ef38c7f7bd69013b&oe=5C6A8D7F"
-             alt="black friday offer photo"
-             style="width:500px;height:250px;">
+    <div id="news" class="left-front" th:each="news :${news}">
+        <!--<p th:text="${news(2).title}"></p>
+        <p th:text="${news(2).description}"></p>-->
+
+
+
     </div>
     <div class="right-front" id="shownGames">
         <h2 class="subtitle">Nyeste spil</h2>

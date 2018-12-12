@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title th:text="${game.title}"></title>
-    <link rel="stylesheet" href="/menuStyle.css">
+    <title>Update News</title>
+    <link rel="stylesheet" href="menuStyle.css"/>
 </head>
 <body>
-
 <nav class="menu">
     <img class="logo" src="http://static1.squarespace.com/static/546b4e9de4b0b367ee9ed3e4/t/5ac737776d2a7394c9527e5e/1522763198118/?format=300w">
     <ol>
@@ -18,21 +17,20 @@
 </nav>
 
 <div id="content">
-   <div class="left">
-       <img th:src="${game.image}" >
-   </div>
-    <div class="right">
-        <p class="card-title" th:text="${game.title}"></p>
-        <p class="card-text" th:text="'Description: ' + ${game.description}" ></p>
-        <p class="card-price" th:text="'Price: ' + ${game.price}" ></p>
-        <iframe width="560" height="315" th:src="${game.link}" frameborder="0" allow="accelerometer; autoplay;
-        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h1>Update</h1>
+    <form  action = "/updateNews" method="post" >
+        <input type="hidden" th:value="${news.newsId}" name="newsId"/>
+        <p>Title: <input type="text" th:value="${news.title}" name="title"/></p>
+        <p>Description: <input type="text" th:value="${news.description}" name="description"/></p>
+        <p>Image link: <input type="text" th:value="${news.image}" name="image"></p>
 
-
-    </div>
-
+        <input type="submit" value="Update" class="button"/>
+    </form>
 </div>
 
+
+</body>
+</html>
 
 </body>
 </html>

@@ -2,17 +2,19 @@ package com.example.demo.Model;
 
 public class News {
 
-    private int news_id;
+    private int newsId;
     private String title;
     private String description;
+    private String image;
 
     public News() {
     }
 
-    public News(int news_id,String title, String description) {
-        this.news_id = news_id;
+    public News(int newsId,String title, String description, String image) {
+        this.newsId = newsId;
         this.title=title;
         this.description = description;
+        this.image=image;
     }
 
     public String getTitle() {
@@ -23,12 +25,12 @@ public class News {
         this.title = title;
     }
 
-    public int getNews_id() {
-        return news_id;
+    public int getNewsId() {
+        return newsId;
     }
 
-    public void setNews_id(int news_id) {
-        this.news_id = news_id;
+    public void setNewsId(int newsId) {
+        this.newsId = newsId;
     }
 
     public String getDescription() {
@@ -38,4 +40,9 @@ public class News {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getImage(){return image; }
+
+    public void setImage(String image){ this.image=image; }
+
 }
