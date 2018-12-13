@@ -18,11 +18,11 @@
 
 <div id="content">
     <h1>Update</h1>
-    <form  action = "/updateNews" method="post" >
-        <input type="hidden" th:value="${news.newsId}" name="newsId"/>
-        <p>Title: <input type="text" th:value="${news.title}" name="title"/></p>
-        <p>Description: <input type="text" th:value="${news.description}" name="description"/></p>
-        <p>Image link: <input type="text" th:value="${news.image}" name="image"></p>
+    <form  action = "/updateNews" method="Post" >
+        <input type="hidden" th:field="${news.newsId}" name="newsId"/>
+        <p>Title: <input type="text" th:field="${news.title}" name="title"/></p>
+        <p>Description: <input type="text" th:field="${news.description}" name="description"/></p>
+        <p>Image link: <input type="text" th:field="${news.image}" name="image"></p>
 
         <input type="submit" value="Update" class="button"/>
     </form>

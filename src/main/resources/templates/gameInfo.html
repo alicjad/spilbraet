@@ -24,7 +24,7 @@
     <div class="right">
         <p class="card-title" th:text="${game.title}"></p>
         <p class="card-text" th:text="'Description: ' + ${game.description}" ></p>
-        <p class="card-price" th:text="'Price: ' + ${game.price}" ></p>
+        <p class="card-price" th:text="'Pris: ' + ${game.price} + 'DKK'" ></p>
         <iframe width="560" height="315" th:src="${game.link}" frameborder="0" allow="accelerometer; autoplay;
         encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

@@ -18,11 +18,13 @@ public class NewsRepository implements INewsRepository {
     }
 
     @Override
-    public News read(int id) throws SQLException {
+    public News read(int id)  {
         Connection conn;
 
         conn = DbConnection.getConnection();
-        preparedStatement = conn.prepareStatement("SELECT * FROM news where newsId=?");
+        try {
+            preparedStatement = conn.prepareStatement("SELECT * FROM news where newsId=?");
+
         preparedStatement.setInt(1, id);
         result = preparedStatement.executeQuery();
         result.next();
@@ -34,6 +36,10 @@ public class NewsRepository implements INewsRepository {
                     result.getString("description"),
                     result.getString("image")
             );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
@@ -42,14 +48,16 @@ public class NewsRepository implements INewsRepository {
     }
 
     @Override
-    public ArrayList<News> readAll() throws SQLException {
+    public ArrayList<News> readAll()  {
 
         ArrayList<News> news = new ArrayList<>();
         Connection conn = DbConnection.getConnection();
 
-
+        try {
         preparedStatement = conn.prepareStatement("SELECT * FROM news");
-        result = preparedStatement.executeQuery();
+
+            result = preparedStatement.executeQuery();
+
 
         while(result.next()){
 
@@ -61,6 +69,9 @@ public class NewsRepository implements INewsRepository {
             size++;
 
 
+        }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return news;
     }
@@ -74,6 +85,7 @@ public class NewsRepository implements INewsRepository {
             preparedStatement.setString(1,news.getTitle());
             preparedStatement.setString(2,news.getDescription());
             preparedStatement.setString(3,news.getImage());
+            preparedStatement.setInt(4, news.getNewsId());
             preparedStatement.execute();
 
         }catch (SQLException e){

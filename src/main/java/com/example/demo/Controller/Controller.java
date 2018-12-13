@@ -44,6 +44,20 @@ public class Controller {
 
     }
 
+    @GetMapping("/updateNews")
+    public String updateNews(@RequestParam("id") int newsId, Model model) throws SQLException {
+        News news=newsRepository.read(newsId);
+        model.addAttribute("news", news);
+        return "updateNews";
+    }
+
+    @PostMapping("/updateNews")
+    public String updateNews(@ModelAttribute News news, Model model) throws SQLException {
+        newsRepository.update(news);
+        model.addAttribute("news", newsRepository.readAll());
+        return"redirect:/news";
+    }
+
     @GetMapping("/games")
     public String gamesPage(Model model){
         model.addAttribute("games", gamesRepository.readAll());
@@ -63,17 +77,4 @@ public class Controller {
         return "gameInfo";
     }
 
-    @GetMapping("/updateNews")
-    public String updateNews(@RequestParam("id") int newsId, Model model) throws SQLException {
-        News news=newsRepository.read(newsId);
-        model.addAttribute("news", news);
-        return "updateNews";
-    }
-
-    @PostMapping("/updateNews")
-    public String updateNews(@ModelAttribute News news){
-
-        newsRepository.update(news);
-        return"redirect:/news";
-    }
 }
