@@ -57,22 +57,6 @@ public class Game {
         this.description = description;
     }
 
-    public String getQuote() {
-        return quote;
-    }
-
-    public void setQuote(String quote) {
-        this.quote = quote;
-    }
-
-    public String getBulletpoints() {
-        return bulletpoints;
-    }
-
-    public void setBulletpoints(String bulletpoints) {
-        this.bulletpoints = bulletpoints;
-    }
-
     public String getImage() {
         return image;
     }
