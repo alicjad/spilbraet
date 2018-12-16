@@ -154,12 +154,10 @@ div#shownGames{
     border: 1px solid transparent;
     box-shadow: 10px 10px 9px 0 rgba(128, 128, 128, 0.9);
     margin-left: 30px;
-    width: 85vw;
-    hegiht: 500px;
-
+    width: 40vw;
 }
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #067B37;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -167,4 +165,22 @@ div#shownGames{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid #EE7325;
+    opacity:80;
+    width:40vw;
+
+}
+
+.left-front.newsContainer{
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    box-shadow: 10px 10px 9px 0 rgba(128, 128, 128, 0.9);
+    margin-left: 30px;
+    width: 50vw!important;
+}
+.social{
+    text-align: center;
 }

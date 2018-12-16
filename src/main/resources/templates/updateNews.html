@@ -20,10 +20,12 @@
     <h1>Update</h1>
     <form  action = "/updateNews" method="Post" >
         <input type="hidden" th:field="${news.newsId}" name="newsId"/>
-        <p>Title: <input type="text" th:field="${news.title}" name="title"/></p>
-        <p>Description: <input type="text" th:field="${news.description}" name="description"/></p>
-        <p>Image link: <input type="text" th:field="${news.image}" name="image"></p>
-
+        <p>Title:</p>
+        <p><input type="text" th:field="${news.title}" name="title"/></p>
+        <p>Description: </p>
+        <p><input type="text" th:field="${news.description}" name="description" style="height:100px;"/></p>
+        <p>Image link: </p>
+        <p><input type="text" th:field="${news.image}" name="image"></p>
         <input type="submit" value="Update" class="button"/>
     </form>
 </div>

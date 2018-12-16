@@ -19,12 +19,20 @@
 
 <div id="content">
     <h1> 🤩 Giv dig selv en pause! Spille brætspil! 🤩</h1>
-   <!-- <div id="news" class="left-front" th:each="newsId: ${news}" th:if="${newsIdStat.index}==1">
-        <p th:text="${news(index).title}"></p> -->
-    <p> Nyheder</p>
 
-    <div th:each="news: ${news}">
-        <div class=" newsContainer">
+    <h2> Nyheder</h2>
+
+    <div class="right-front" id="shownGames">
+    <h2 class="subtitle">Nyeste spil</h2>
+    <h4>Gold fever</h4>
+    <img src="https://www.uplay.it/www.uplay.it_Gold_Fever--400x400.png" alt="game image" style="width: 250px;height: 250px;">
+    <h4>Magic Maze</h4>
+    <img src="https://images-na.ssl-images-amazon.com/images/I/71LP5b5JYqL._SY355_.jpg" alt="game image" style="width:250px;height:250px;">
+    <br><a href="/games" class="button">Check out our games here</a>
+    </div>
+
+    <div th:each="news: ${news}" >
+        <div class=" newsContainer left-front" >
             <p th:text="${news.title}"></p>
             <p th:text="${news.description}"></p>
             <img th:if="${news.image}!=''" th:src="${news.image}" style=" width:400px;height:200px;">
@@ -34,15 +42,7 @@
 
 
 
-    </div>
-    <div class="right-front" id="shownGames">
-        <h2 class="subtitle">Nyeste spil</h2>
-        <h4>Gold fever</h4>
-        <img src="https://www.uplay.it/www.uplay.it_Gold_Fever--400x400.png" alt="game image" style="width: 250px;height: 250px;">
-        <h4>Magic Maze</h4>
-        <img src="https://images-na.ssl-images-amazon.com/images/I/71LP5b5JYqL._SY355_.jpg" alt="game image" style="width:250px;height:250px;">
-        <br><a href="/games">Check out our games here</a>
-    </div>
+
 </div>
 
 
