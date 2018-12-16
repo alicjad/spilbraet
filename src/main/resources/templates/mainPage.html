@@ -20,23 +20,22 @@
 <div id="content">
     <h1> 🤩 Giv dig selv en pause! Spille brætspil! 🤩</h1>
 
-    <h2> Nyheder</h2>
-
     <div class="right-front" id="shownGames">
-    <h2 class="subtitle">Nyeste spil</h2>
-    <h4>Gold fever</h4>
-    <img src="https://www.uplay.it/www.uplay.it_Gold_Fever--400x400.png" alt="game image" style="width: 250px;height: 250px;">
-    <h4>Magic Maze</h4>
-    <img src="https://images-na.ssl-images-amazon.com/images/I/71LP5b5JYqL._SY355_.jpg" alt="game image" style="width:250px;height:250px;">
-    <br><a href="/games" class="button">Tjek vores spil her</a>
+        <h2 class="subtitle">Nyeste spil</h2>
+        <h3>Gold fever</h3>
+        <img src="https://www.uplay.it/www.uplay.it_Gold_Fever--400x400.png" alt="game image" style="width: 250px;height: 250px;">
+        <h3>Magic Maze</h3>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71LP5b5JYqL._SY355_.jpg" alt="game image" style="width:250px;height:250px;">
+        <br><a href="/games" class="button">Tjek vores spil her</a>
     </div>
+
+    <h2> Nyheder</h2>
 
     <div th:each="news: ${news}" >
         <div class=" newsContainer left-front" >
-            <p th:text="${news.title}"></p>
+            <h3 th:text="${news.title}"></h3>
             <p th:text="${news.description}"></p>
             <img th:if="${news.image}!=''" th:src="${news.image}" style=" width:400px;height:200px;">
-            <a th:href="@{'updateNews?id='+ ${news.newsId}}" class="button" style="float:right;">Opdatering</a>
         </div>
     </div>
 
