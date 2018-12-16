@@ -21,6 +21,16 @@
     <h1> 🤩 Giv dig selv en pause! Spille brætspil! 🤩</h1>
    <!-- <div id="news" class="left-front" th:each="newsId: ${news}" th:if="${newsIdStat.index}==1">
         <p th:text="${news(index).title}"></p> -->
+    <p> Nyheder</p>
+
+    <div th:each="news: ${news}">
+        <div class=" newsContainer">
+            <p th:text="${news.title}"></p>
+            <p th:text="${news.description}"></p>
+            <img th:if="${news.image}!=''" th:src="${news.image}" style=" width:400px;height:200px;">
+            <a th:href="@{'updateNews?id='+ ${news.newsId}}" class="button" style="float:right;">Update</a>
+        </div>
+    </div>
 
 
 

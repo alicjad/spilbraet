@@ -48,6 +48,34 @@ public class NewsRepository implements INewsRepository {
     }
 
     @Override
+    public ArrayList<News> readLatestThree() {
+        ArrayList<News> news = new ArrayList<>();
+        Connection conn = DbConnection.getConnection();
+
+        try {
+            preparedStatement = conn.prepareStatement("SELECT * FROM news ORDER BY newsId DESC LIMIT 3");
+
+            result = preparedStatement.executeQuery();
+
+
+            while(result.next()){
+
+                news.add(new News(result.getInt("newsId"),
+                        result.getString("title"),
+                        result.getString("description"),
+                        result.getString("image")));
+
+                size++;
+
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return news;
+    }
+
+    @Override
     public ArrayList<News> readAll()  {
 
         ArrayList<News> news = new ArrayList<>();

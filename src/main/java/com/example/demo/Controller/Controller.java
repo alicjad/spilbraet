@@ -26,7 +26,7 @@ public class Controller {
 
     @GetMapping("/")
     public String mainPage(Model model) throws SQLException {
-        model.addAttribute("news", newsRepository.readAll());
+        model.addAttribute("news", newsRepository.readLatestThree());
         //model.addAttribute("size", newsRepository.size());
 
         return "mainPage";

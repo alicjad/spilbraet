@@ -11,4 +11,5 @@ public interface INewsRepository {
         void update(News news);
         void delete(int id);
         ArrayList<News> readAll() throws SQLException;
+        ArrayList<News> readLatestThree() throws SQLException;
 }
