@@ -18,13 +18,13 @@
 </nav>
 
 <div id="content">
-    <h2> Nyheder</h2>
+    <h2>Opdatering</h2>
 
     <div th:each="news: ${news}" class="newsContainer">
         <h3 th:text="${news.title}"></h3>
         <p th:text="${news.description}"></p>
         <img th:if="${news.image}!=''" th:src="${news.image}" style=" width:400px;height:200px;">
-        <a th:href="@{'updateNews?id='+ ${news.newsId}}" class="button" style="float:right;">Update</a>
+        <a th:href="@{'updateNews?id='+ ${news.newsId}}" class="button" style="float:right;">Opdatering</a>
     </div>
 </div>
 
